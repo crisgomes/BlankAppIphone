@@ -1,5 +1,9 @@
 ﻿using Foundation;
 using UIKit;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 
 namespace BlankAppIphone
 {
@@ -18,6 +22,8 @@ namespace BlankAppIphone
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
+            MobileCenter.Start("c4e97118-45a1-43f0-9f15-2b53dedaba14", typeof(Analytics), typeof(Crashes));
+
             // create a new window instance based on the screen size
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
